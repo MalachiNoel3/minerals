@@ -21,7 +21,7 @@ html, body {
 }
 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
     .curve{z-index: -1;position:absolute;top:70%;left:-20%;height:90%;width:140%;background:#048a93;background:-webkit-gradient(linear,left top,right top,from(#048a93),color-stop(40%,#c1efbe),color-stop(70%,#beefbe),to(#6bebb2));background:-webkit-linear-gradient(left,#048a93,#c1efbe 40%,#beefbe 70%,#6bebb2);background:-o-linear-gradient(left,#048a93 0,#c1efbe 40%,#beefbe 70%,#6bebb2 100%);background:linear-gradient(90deg,#048a93,#c1efbe 40%,#beefbe 70%,#6bebb2);z-index:1;-webkit-transform:rotate(-15deg);-ms-transform:rotate(-15deg);transform:rotate(-15deg);-webkit-transform-origin:50% 0;-ms-transform-origin:50% 0;transform-origin:50% 0;border-radius:50%}._13wF-Ya2UCjC8lpj8zh3V{position:fixed;top:-50rem;left:-50rem;opacity:0}._13wF-Ya2UCjC8lpj8zh3V input{height:100%;width:100%;cursor:pointer}
     .mineral-image {
         height: 30%;
@@ -31,7 +31,7 @@ html, body {
         float: right;
     }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .score {
         max-width: 25%;
     }
