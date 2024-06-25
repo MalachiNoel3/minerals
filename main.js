@@ -19,9 +19,9 @@ function cmineral(user, mineral){
     console.log('Current value: ', snapshot.val());
   });
   
-  const ref = database.ref(`users/${user}/${mineral}/correct`);
+  const ref2 = database.ref(`users/${user}/${mineral}/correct`);
 
-  ref.transaction((currentValue) => {
+  ref2.transaction((currentValue) => {
     // If the node/value has never been set, it will be `null`
     if (currentValue === null) {
       return 1; // Sets the value as 1 if it's currently null (i.e., doesn't exist)
