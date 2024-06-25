@@ -1,5 +1,5 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+const initializeApp = require("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+const getAnalytics = require("https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js");
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
