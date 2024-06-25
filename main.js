@@ -1,43 +1,27 @@
-function cmineral(user, mineral){
-  const ref = database.ref(`minerals/${mineral}/correct`);
+const database = firebase.database();
+
+function incrementValue(path) {
+  const ref = database.ref(path);
 
   ref.transaction((currentValue) => {
-    // If the node/value has never been set, it will be `null`
-    if (currentValue === null) {
-      return 1; // Sets the value as 1 if it's currently null (i.e., doesn't exist)
-    } else {
-      return currentValue + 1; // Increment the current value by 1
-    }
+    return (currentValue || 0) + 1;
   }, (error, committed, snapshot) => {
     if (error) {
-      console.log('Transaction failed abnormally!', error);
+      console.error("Transaction failed: ", error);
     } else if (!committed) {
-      console.log('Transaction not committed.');
+      console.log("Transaction not committed");
     } else {
-      console.log('Number incremented successfully!');
+      console.log("Transaction committed, new value: ", snapshot.val());
     }
-    console.log('Current value: ', snapshot.val());
   });
-  
-  const ref2 = database.ref(`users/${user}/${mineral}/correct`);
+}
 
-  ref2.transaction((currentValue) => {
-    // If the node/value has never been set, it will be `null`
-    if (currentValue === null) {
-      return 1; // Sets the value as 1 if it's currently null (i.e., doesn't exist)
-    } else {
-      return currentValue + 1; // Increment the current value by 1
-    }
-  }, (error, committed, snapshot) => {
-    if (error) {
-      console.log('Transaction failed abnormally!', error);
-    } else if (!committed) {
-      console.log('Transaction not committed.');
-    } else {
-      console.log('Number incremented successfully!');
-    }
-    console.log('Current value: ', snapshot.val());
-  });
+function cmineral(user, mineral){
+  incrementValue(`minerals/${mineral}/correct`);
+
+  incrementValue(`users/${user}/${mineral}/correct`);
+
+  return 1
   }
 
 var mineral = ""
