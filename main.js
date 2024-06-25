@@ -20,7 +20,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 function cmineral(user, mineral){
-  const ref = database.ref('minerals/${mineral}/correct');
+  const ref = database.ref(`minerals/${mineral}/correct`);
 
   ref.transaction((currentValue) => {
     // If the node/value has never been set, it will be `null`
@@ -40,7 +40,7 @@ function cmineral(user, mineral){
     console.log('Current value: ', snapshot.val());
   });
   
-  const ref = database.ref('users/${user}/${mineral}/correct');
+  const ref = database.ref(`users/${user}/${mineral}/correct`);
 
   ref.transaction((currentValue) => {
     // If the node/value has never been set, it will be `null`
