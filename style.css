@@ -1,6 +1,12 @@
 .title {
     color: black;
 }
+.infoTitle:hover {
+  text-decoration: none;
+}
+.infoTitle {
+  color:black;
+}
 html, body {
     margin: 0;
     height: 100%;
