@@ -1,24 +1,3 @@
-const initializeApp = require("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
-const getAnalytics = require("https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js");
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyBhZD91sAHQJx-OWhpTAcV1KDWusDnb9p4",
-    authDomain: "minerals-eeba4.firebaseapp.com",
-    projectId: "minerals-eeba4",
-    storageBucket: "minerals-eeba4.appspot.com",
-    messagingSenderId: "488342313029",
-    appId: "1:488342313029:web:776229bf5cf18062b5ab2c",
-    measurementId: "G-YKH8GDWCF5"
-};
-
-  // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 function cmineral(user, mineral){
   const ref = database.ref(`minerals/${mineral}/correct`);
 
