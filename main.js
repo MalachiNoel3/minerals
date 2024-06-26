@@ -91,13 +91,15 @@ function minandimage(){
 }
 function checkans() {
     var guess = document.getElementById("guessbox").value;
-
+    var currentTime = new Date().getTime() / 1000;
+    
     if (levenshteinDistance(guess.toLowerCase(), mineral.toLowerCase()) <= 2){
         alert(`Correct! The mineral is ${mineral}. `)
         setCookie("correct", parseInt(getCookie("correct"))+1, 99999)
         console.log(getCookie('answered'))
-        console.log('Hello')
 
+        seconds = currentTime
+      
         cmineral(getCookie('usersession'), mineral) 
 
         document.getElementById("answered").innerHTML = getCookie("answered")
@@ -109,8 +111,10 @@ function checkans() {
     }
     else {
         alert(`Incorrect. The mineral is ${mineral}`)
+          if (currentTime - seconds > 0.6){
         imineral(getCookie('usersession'), mineral)
-
+          }
+        seconds = currentTime
         document.getElementById("answered").innerHTML = getCookie("answered")
         document.getElementById("correct").innerHTML = getCookie("correct")
         setCookie("answered", parseInt(getCookie("answered"))+1, 99999)
@@ -178,4 +182,6 @@ if (getCookie('usersession') == ""){
     setCookie("usersession", newid, 99999)
     createUserDocument(newid)
 }
+var seconds = new Date().getTime() / 1000;
 minandimage()
+
