@@ -76,7 +76,7 @@ function minandimage(){
 function checkans() {
     var guess = document.getElementById("guessbox").value;
 
-    if (levenshteinDistance(guess.toLowerCase(), mineral.toLowerCase()) <= 3){
+    if (levenshteinDistance(guess.toLowerCase(), mineral.toLowerCase()) <= 2){
         alert(`Correct! The mineral is ${mineral}. test freezing`)
         setCookie("correct", parseInt(getCookie("correct"))+1, 99999)
         console.log(getCookie('answered'))
