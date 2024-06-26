@@ -1,4 +1,4 @@
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyBhZD91sAHQJx-OWhpTAcV1KDWusDnb9p4",
     authDomain: "minerals-eeba4.firebaseapp.com",
     projectId: "minerals-eeba4",
@@ -6,16 +6,20 @@ const firebaseConfig = {
     messagingSenderId: "488342313029",
     appId: "1:488342313029:web:776229bf5cf18062b5ab2c",
     measurementId: "G-YKH8GDWCF5"
-  };
+};
 
-const database = firebase.database();
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Realtime Database
+var database = firebase.database();
 
 function incrementValue(path) {
-  const ref = database.ref(path);
+  var ref = database.ref(path);
 
-  ref.transaction((currentValue) => {
+  ref.transaction(function(currentValue) {
     return (currentValue || 0) + 1;
-  }, (error, committed, snapshot) => {
+  }, function(error, committed, snapshot) {
     if (error) {
       console.error("Transaction failed: ", error);
     } else if (!committed) {
