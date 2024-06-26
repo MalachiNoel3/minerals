@@ -10,13 +10,6 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.auth().signInAnonymously()
-  .then(() => {
-    console.log("Signed in anonymously");
-  })
-  .catch((error) => {
-    console.error("Error signing in anonymously: ", error);
-  });
 
 // Realtime Database
 var firestore = firebase.firestore();
