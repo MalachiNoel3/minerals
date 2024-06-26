@@ -92,6 +92,7 @@ function checkans() {
         document.getElementById("answered").innerHTML = getCookie("answered")
         document.getElementById("correct").innerHTML = getCookie("correct")
         setCookie("answered", parseInt(getCookie("answered"))+1, 99999)      
+        document.getElementById("guessbox").value = ""
 
         minandimage()
     }
@@ -102,6 +103,7 @@ function checkans() {
         document.getElementById("answered").innerHTML = getCookie("answered")
         document.getElementById("correct").innerHTML = getCookie("correct")
         setCookie("answered", parseInt(getCookie("answered"))+1, 99999)
+        document.getElementById("guessbox").value = ""
         
         minandimage()
     }
