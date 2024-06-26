@@ -1,6 +1,3 @@
-const firebase = require("firebase/app");
-require("firebase/database");
-
 const firebaseConfig = {
     apiKey: "AIzaSyBhZD91sAHQJx-OWhpTAcV1KDWusDnb9p4",
     authDomain: "minerals-eeba4.firebaseapp.com",
