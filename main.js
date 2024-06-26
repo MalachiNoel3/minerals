@@ -89,12 +89,21 @@ function checkans() {
 
         cmineral(getCookie('usersession'), mineral) 
 
-        location.reload()        
+        document.getElementById("answered").innerHTML = getCookie("answered")
+        document.getElementById("correct").innerHTML = getCookie("correct")
+        setCookie("answered", parseInt(getCookie("answered"))+1, 99999)      
+
+        minandimage()
     }
     else {
         alert(`Incorrect. The mineral is ${mineral}`)
         imineral(getCookie('usersession'), mineral)
-        location.reload()
+
+        document.getElementById("answered").innerHTML = getCookie("answered")
+        document.getElementById("correct").innerHTML = getCookie("correct")
+        setCookie("answered", parseInt(getCookie("answered"))+1, 99999)
+        
+        minandimage()
     }
 }
 function setCookie(cname, cvalue, exdays) {
