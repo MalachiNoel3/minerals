@@ -80,6 +80,7 @@ function checkans() {
         alert(`Correct! The mineral is ${mineral}. test freezing`)
         setCookie("correct", parseInt(getCookie("correct"))+1, 99999)
         console.log(getCookie('answered'))
+        console.log('Hello')
 
         cmineral("B2FC4A0dcLRWKA5qQYI2", mineral) 
 
