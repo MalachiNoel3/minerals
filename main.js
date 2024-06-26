@@ -87,13 +87,13 @@ function checkans() {
         console.log(getCookie('answered'))
         console.log('Hello')
 
-        cmineral("B2FC4A0dcLRWKA5qQYI2", mineral) 
+        cmineral(getCookie('usersession'), mineral) 
 
         location.reload()        
     }
     else {
         alert(`Incorrect. The mineral is ${mineral}`)
-        cmineral("B2FC4A0dcLRWKA5qQYI2", mineral)
+        imineral(getCookie('usersession'), mineral)
         location.reload()
     }
 }
@@ -119,6 +119,17 @@ function getCookie(cname) {
     return "";
 }
 
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
 
 var ta = document.getElementById('guessbox')
 ta.addEventListener(
@@ -139,5 +150,8 @@ else {
     document.getElementById("answered").innerHTML = getCookie("answered")
     document.getElementById("correct").innerHTML = getCookie("correct")
     setCookie("answered", parseInt(getCookie("answered"))+1, 99999)
+}
+if (getCookie('usersession') == ""){
+    setCookie("usersession", makeid(14), 99999)
 }
 minandimage()
