@@ -42,6 +42,17 @@ function imineral(user, mineral){
   return 1;
 }
 
+function createUserDocument(user) {
+  var userDocRef = firestore.collection('users').doc(user);
+
+  userDocRef.set({})
+  .then(() => {
+    console.log("User document created successfully");
+  })
+  .catch((error) => {
+    console.error("Error creating user document: ", error);
+  });
+}
 
 var mineral = ""
 minerals = {'Actinolite': 209, 'Agate': 148, 'Alabaster': 24, 'Albite': 150, 'Almandine': 150, 'Amazonite': 149, 'Amethyst': 148, 'Apatite': 155, 'Apophyllite': 583, 'Aragonite': 424, 'Augite': 192, 'Aventurine': 40, 'Azurite': 585, 'Barite': 586, 'Beryl': 590, 'Biotite': 173, 'Bornite': 176, 'Calcite': 148, 'Celestite': 150, 'Chalcedony': 149, 'Chalcopyrite': 391, 'Citrine': 148, 'Copper': 556, 'Corundum': 595, 'Diamond': 594, 'Dolomite': 331, 'Epidote': 525, 'Fluorite': 322, 'Galena': 255, 'Goethite': 334, 'Gold': 585, 'Graphite': 172, 'Halite': 223, 'Hematite': 415, 'Hornblende': 180, 'Jasper': 150, 'Kaolinite': 160, 'Kyanite': 273, 'Labradorite': 151, 'Lepidolite': 238, 'Limonite': 235, 'Magnetite': 445, 'Malachite': 148, 'Milky Quartz': 148, 'Muscovite': 230, 'Olivine': 149, 'Opal': 393, 'Orthoclase': 274, 'Pyrite': 148, 'Pyrolusite': 188, 'Pyromorphite': 567, 'Rhodochrosite': 546, 'Rhodonite': 252, 'Rock Crystal': 148, 'Rose Quartz': 148, 'Rutile': 458, 'Satin Spar': 62, 'Selenite': 152, 'Silver': 150, 'Smoky Quartz': 148, 'Sodalite': 204, 'Sphalerite': 148, 'Spodumene': 393, 'Staurolite': 232, 'Stibnite': 478, 'Stilbite': 148, 'Sulfur': 321, 'Talc': 173, 'Topaz': 535, "Tourmaline": 150, 'Tremolite': 228, 'Turquoise': 366, 'Ulexite': 189, 'Vanadinite': 569, 'Willemite': 313, 'Zincite': 217, 'Zircon': 294}
@@ -163,6 +174,8 @@ else {
     setCookie("answered", parseInt(getCookie("answered"))+1, 99999)
 }
 if (getCookie('usersession') == ""){
-    setCookie("usersession", makeid(14), 99999)
+    const newid = makeid(14)
+    setCookie("usersession", newid, 99999)
+    createUserDocument(newid)
 }
 minandimage()
