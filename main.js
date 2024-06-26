@@ -77,13 +77,13 @@ function checkans() {
     var guess = document.getElementById("guessbox").value;
 
     if (levenshteinDistance(guess.toLowerCase(), mineral.toLowerCase()) <= 3){
-        alert(`Correct! The mineral is ${mineral}`)
+        alert(`Correct! The mineral is ${mineral}. test freezing`)
         setCookie("correct", parseInt(getCookie("correct"))+1, 99999)
         console.log(getCookie('answered'))
 
         cmineral("B2FC4A0dcLRWKA5qQYI2", mineral) 
 
-        location.reload()
+        // location.reload()        
     }
     else {
         alert(`Incorrect. The mineral is ${mineral}`)
