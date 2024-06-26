@@ -1,3 +1,16 @@
+import firebase from "firebase/app";
+import "firebase/database";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBhZD91sAHQJx-OWhpTAcV1KDWusDnb9p4",
+    authDomain: "minerals-eeba4.firebaseapp.com",
+    projectId: "minerals-eeba4",
+    storageBucket: "minerals-eeba4.appspot.com",
+    messagingSenderId: "488342313029",
+    appId: "1:488342313029:web:776229bf5cf18062b5ab2c",
+    measurementId: "G-YKH8GDWCF5"
+  };
+
 const database = firebase.database();
 
 function incrementValue(path) {
