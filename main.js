@@ -32,13 +32,13 @@ function incrementField(collection, doc, field) {
 
 function cmineral(user, mineral){
   incrementField("minerals", mineral, "correct");
-  incrementField("users", user, `${mineral}.correct`);
+ // incrementField("users", user, `${mineral}.correct`);
   return 1;
 }
 
 function imineral(user, mineral){
   incrementField("minerals", mineral, "incorrect");
-  incrementField("users", user, `${mineral}.incorrect`);
+ // incrementField("users", user, `${mineral}.incorrect`);
   return 1;
 }
 
@@ -180,7 +180,7 @@ else {
 if (getCookie('usersession') == ""){
     const newid = makeid(14)
     setCookie("usersession", newid, 99999)
-    createUserDocument(newid)
+//    createUserDocument(newid)
 }
 var seconds = new Date().getTime() / 1000;
 minandimage()
