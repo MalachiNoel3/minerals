@@ -11,6 +11,8 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 // Realtime Database
 var firestore = firebase.firestore();
 
