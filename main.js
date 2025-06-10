@@ -1,6 +1,3 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js"
-
 var firebaseConfig = {
     apiKey: "AIzaSyBhZD91sAHQJx-OWhpTAcV1KDWusDnb9p4",
     authDomain: "minerals-eeba4.firebaseapp.com",
@@ -14,8 +11,6 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 // Realtime Database
 var firestore = firebase.firestore();
 
